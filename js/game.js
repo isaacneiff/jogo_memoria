@@ -37,7 +37,7 @@ const checkEndGame = () => {
     const disableCards = document.querySelectorAll('.disable-card')
     if (disableCards.length === 16) {
         clearInterval(this.loop)
-        alert(`Doces ou travessuras! Parabéns! Seu tempo foi: ${timerDisplay.innerHTML}`)
+        alert(`Doces ou travessuras! Parabéns! Você venceu o jogo!!`)
     }
 
 }
@@ -147,6 +147,7 @@ const updateTimerDisplay = () => {
     const seconds = totalSeconds % 60
     const timerDisplay = document.getElementById('tempo')
     timerDisplay.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+
 }
 
 
@@ -160,7 +161,7 @@ const startTime = () => {
 
     }, 1000)
 
-    overlay.style.display = 'flex'
+    overlay.style.display = 'none'
 
 
 }
@@ -169,7 +170,18 @@ const stopTime = () => {
 
     clearInterval(buttonTimer)
     buttonTimer = null
+    overlay.style.display = 'flex'
+}
+
+const resetTime = () => {
+
+    clearInterval(buttonTimer)
+    buttonTimer = null
+    totalSeconds = 0
+    updateTimerDisplay()
     overlay.style.display = 'none'
+
+
 }
 
 
@@ -179,8 +191,11 @@ window.onload = () => {
     updateTimerDisplay()
 
 
+
     document.getElementById('startBtn').addEventListener('click', startTime);
     document.getElementById('stopBtn').addEventListener('click', stopTime);
+    document.getElementById('resetBtn').addEventListener('click', resetTime)
+
 
     const cards = document.querySelectorAll('.card')
     cards.forEach(card => {

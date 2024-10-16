@@ -88,12 +88,6 @@ header {
     opacity: 0.5;
 }
 
-#button {
-    margin-right: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 2px;
-}
 
 span {
 
@@ -112,6 +106,8 @@ button {
     border-radius: 8px;
     text-align: center;
     margin-inline: 5px;
+    margin-inline: 10px;
+    box-shadow: #555454 3px 3px 3px;
 
     &:hover {
 
