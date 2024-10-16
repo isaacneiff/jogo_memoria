@@ -13,14 +13,12 @@ const characters = [
     'dracula'
 ]
 
-
 //criação de elementos no HTML
 const createElement = (tag, className) => {
     const element = document.createElement(tag)
     element.className = className
     return element
 }
-
 
 //funcionalidades para as cartas
 
@@ -30,13 +28,11 @@ let secondCard = ''
 //funcionalidade para checar o final do jogo 
 //caso o contador disablecards chegue ao tamanho de 16 cartas combinadas, ele emite um alert que finaliza o jogo
 
-
-
 const checkEndGame = () => {
 
     const disableCards = document.querySelectorAll('.disable-card')
     if (disableCards.length === 16) {
-        clearInterval(this.loop)
+        clearInterval(buttonTimer)
         alert(`Doces ou travessuras! Parabéns! Você venceu o jogo!!`)
     }
 
@@ -77,6 +73,7 @@ const revealCard = ({ target }) => {
     //condição para impedir o jogador de iniciar o jogo sem que o conometro seja ligado 
 
     if (!buttonTimer) {
+        alert('Você deve iniciar o cronômetro antes de virar as cartas')
         return
     }
 
@@ -139,7 +136,7 @@ const loadGame = () => {
 
 let buttonTimer
 let totalSeconds = 0
-const overlay = document.getElementById('overlay')
+
 
 
 const updateTimerDisplay = () => {
@@ -161,7 +158,7 @@ const startTime = () => {
 
     }, 1000)
 
-    overlay.style.display = 'none'
+    style.display = 'none'
 
 
 }
@@ -170,32 +167,35 @@ const stopTime = () => {
 
     clearInterval(buttonTimer)
     buttonTimer = null
-    overlay.style.display = 'flex'
+    alert('Jogo pausado')
+
 }
 
-const resetTime = () => {
+/*const resetTime = () => {
 
     clearInterval(buttonTimer)
     buttonTimer = null
     totalSeconds = 0
     updateTimerDisplay()
-    overlay.style.display = 'none'
+    alert('O cronômetro foi reiniciado')
 
+}*/
+
+const resetPag = () => {
+
+    location.reload()
 
 }
-
 
 //funcionalidade para carregar o jogo e o timer do
 window.onload = () => {
 
     updateTimerDisplay()
 
-
-
     document.getElementById('startBtn').addEventListener('click', startTime);
     document.getElementById('stopBtn').addEventListener('click', stopTime);
-    document.getElementById('resetBtn').addEventListener('click', resetTime)
-
+    //document.getElementById('resetBtn').addEventListener('click', resetTime)
+    document.getElementById('resetPag').addEventListener('click', resetPag)
 
     const cards = document.querySelectorAll('.card')
     cards.forEach(card => {

@@ -25,14 +25,15 @@ main {
 
 header {
 
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     padding: 30px;
     margin: 0 0 30px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.40);
     border-radius: 8px;
 
 }
@@ -67,6 +68,9 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: 15px auto;
+    background-color: rgba(255, 255, 255, 0.40);
+    padding: 20px;
+    border-radius: 4px;
 }
 
 .front {
@@ -91,23 +95,24 @@ header {
 
 span {
 
-    background-color: orangered;
+    background-image: linear-gradient(to right top, #ff8500, #ff7600, #ff6600, #ff5400, #ff3e00, #ff3800, #ff3100, #ff2900, #ff3800, #ff4400, #ff4f00, #ff5800);
     padding: 7px;
     border-radius: 8px;
     text-align: center;
     margin-inline: 5px;
+    width: 600px;
 
 }
 
 button {
 
-    background-color: orangered;
+    background-image: linear-gradient(to right top, #ff8500, #ff7600, #ff6600, #ff5400, #ff3e00, #ff3800, #ff3100, #ff2900, #ff3800, #ff4400, #ff4f00, #ff5800);
     padding: 7px;
     border-radius: 8px;
     text-align: center;
     margin-inline: 5px;
     margin-inline: 10px;
-    box-shadow: #555454 3px 3px 3px;
+    box-shadow: #222222 3px 3px 3px;
 
     &:hover {
 
@@ -129,4 +134,13 @@ button {
     align-items: center;
     color: white;
     font-size: 24px;
+}
+
+#tempo {
+
+    background-image: linear-gradient(to bottom, #ffff00, #fff400, #ffea00, #ffdf00, #ffd500, #ffc900, #ffbe00, #ffb200, #ffa200, #ff9200, #ff8000, #ff6e00);
+    color: rgb(30, 30, 30);
+    border-radius: 8px;
+    padding: 10px;
+
 }
