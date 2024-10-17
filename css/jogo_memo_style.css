@@ -10,11 +10,11 @@
 
 }
 
-
 main {
     display: flex;
     flex-direction: column;
-    width: 100dvw;
+    width: 100vw;
+    height: 100vh;
     background-image: url('../assets/bg.jpg');
     background-size: cover;
     align-items: center;
@@ -23,27 +23,40 @@ main {
 }
 
 header {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px;
+    max-width: 700px;
     padding: 30px;
     margin: 0 0 3px;
     background-color: rgba(255, 255, 255, 0.40);
     border-radius: 8px;
-
 }
 
+#grid {
+    width: 30%;
+    height: 100%;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.40);
+    padding: 20px;
+    border-radius: 4px;
+    grid-template-rows: repeat(4, 3fr);
+}
+
+
+
+
 .card {
-    aspect-ratio: 3/4;
+
     width: 100%;
     border-radius: 5px;
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
-
 }
 
 .face {
@@ -58,18 +71,6 @@ header {
 
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 15px auto;
-    background-color: rgba(255, 255, 255, 0.40);
-    padding: 20px;
-    border-radius: 4px;
-
-}
 
 .front {
     transform: rotatey(180deg);

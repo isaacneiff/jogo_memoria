@@ -1,4 +1,4 @@
-const grid = document.querySelector('.grid')
+const grid = document.getElementById('grid')
 const timerDisplay = document.querySelector('.timer')
 
 //funcionalidade para "puxar" as imagens dos personagens
@@ -95,7 +95,6 @@ const revealCard = ({ target }) => {
         secondCard = target.parentNode
         checkCards()
     }
-
 
 }
 
